@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ResamVi | Code, Edit, Baking</title>
+
+  <meta name="keywords" content="resamvi, resamvi.de, julien, blog, technologie, laufen">
+  <meta name="description" content="ResamVi: Blog von Julien">
+  <meta name="referrer" content="same-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/vue"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    
+    <template v-for="atr in objs">
+      {{atr}}
+    </template>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        objs: [
+          "a", "lol",
+          "b", "xd"
+        ]
+      }
+    });
+  </script>
+</body>
+
+</html>
