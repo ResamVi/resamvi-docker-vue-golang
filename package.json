@@ -1,0 +1,31 @@
+{
+  "name": "resamvitalized",
+  "version": "1.0.0",
+  "description": " A re-engineered version of my old blog using more advanced technologies",
+  "main": "src/index.js",
+  "scripts": {
+    "webpack": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ResamVi/resamvitalized.git"
+  },
+  "keywords": [
+    "resamvi",
+    "blog",
+    "latest"
+  ],
+  "author": "Julien Midedji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ResamVi/resamvitalized/issues"
+  },
+  "homepage": "https://github.com/ResamVi/resamvitalized#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.8"
+  }
+}
