@@ -4,7 +4,8 @@
   "description": " A re-engineered version of my old blog using more advanced technologies",
   "main": "src/index.js",
   "scripts": {
-    "webpack": "webpack --config webpack.config.js"
+    "webpack": "webpack --config webpack.config.js",
+    "test": "./node_modules/eslint/bin/eslint.js webpack.config.js src/**.js"
   },
   "repository": {
     "type": "git",
