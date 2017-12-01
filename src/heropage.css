@@ -1,3 +1,31 @@
-html {
-    background-color: red;
+* {
+    
+}
+html, body{
+    margin: 0;
+}
+
+#heropage {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 10%;
+    height: 100vh;
+}
+
+#title {
+    padding-left: 1%;
+    font-size: 5vw;
+}
+
+#verticalLine {
+    max-width: 100%;
+    display: block;
+    height: 10vh;
+}
+
+.responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
 }
