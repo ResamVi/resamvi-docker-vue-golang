@@ -1,6 +1,7 @@
 * {
     
 }
+
 html, body{
     margin: 0;
 }
@@ -16,6 +17,7 @@ html, body{
 #title {
     padding-left: 1%;
     font-size: 5vw;
+    font-family: 'Cinzel';
 }
 
 #verticalLine {

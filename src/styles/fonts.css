@@ -1,6 +1,20 @@
 @font-face {
-    font-family: 'Open Sans Condensed';
+    font-family: 'Cinzel';
     font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/OpenSans.woff2') format('woff2');
+    font-weight: 400;
+    src: url('../fonts/Cinzel-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/SpaceMono-Regular.ttf') format('truetype');
 }
