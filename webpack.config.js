@@ -13,9 +13,9 @@ module.exports = {
             {
                 test: /\.css/,
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                  })
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                })
             },
             {
                 test: /\.(gif|png|jpe?g|ico)/,
@@ -30,7 +30,7 @@ module.exports = {
             {
                 test: /\.(woff2|otf|ttf)/,
                 use: [{
-                    loader: "file-loader",
+                    loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'fonts/'
@@ -40,7 +40,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("style.css"),
+        new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
