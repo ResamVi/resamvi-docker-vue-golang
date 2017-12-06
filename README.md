@@ -3,7 +3,7 @@
   <br>
   ResamVitalized
 </h1>
-[![Build Status](https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master)](https://travis-ci.org/ResamVi/resamvitalized)
+https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master
 
 A re-engineered version of my old website [https://resamvi.de/](https://resamvi.de/) using more advanced technologies.
 
