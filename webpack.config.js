@@ -28,7 +28,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(woff2|otf|ttf)/,
+                test: /\.(woff2|woff|otf|ttf)/,
                 use: [{
                     loader: 'file-loader',
                     options: {

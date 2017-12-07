@@ -1,2 +1,8 @@
 1. Add amplify for nginx monitoring
 https://amplify.nginx.com/signup/
+
+2. Minify/Strip html/css/js files
+
+3. Tree shaking?
+
+4. Remove unecessary css styles of materialize
