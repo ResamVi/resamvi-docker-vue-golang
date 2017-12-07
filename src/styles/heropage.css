@@ -17,8 +17,8 @@ html, body{
     height: 100vh;
 }
 
-#hero-container {
-    margin-top: 22%;
+#free-space {
+    height:22%;
 }
 
 #hero-image {
@@ -27,7 +27,7 @@ html, body{
     display: flex;
 }
 
-#hero-text {
+#hero-description {
     text-align: center;
 }
 
@@ -37,48 +37,17 @@ html, body{
     height: 10vh;
 }
 
-#hero-text {
+#hero-description {
     font-family: 'Space Mono';
 }
 
-#hero-logos {
+#hero-icons {
     display: flex;
-    margin-top: 2%;
+    margin-top: 4%;
     justify-content: center;
 }
 
 #title {
     padding-left: 1%;
     font-family: 'Cinzel';
-}
-
-/* Title size */
-@media only screen and (min-width: 614px) {
-    #title {
-        font-size: 4em;
-    }
-
-    #hero-text {
-        font-size: 1.5em;
-    }
-}
-
-@media only screen and (min-width: 420px) and (max-width: 613px) {
-    #title {
-        font-size: 3em;
-    }
-
-    #hero-text {
-        font-size: 1em;
-    }
-}
-
-@media only screen and (max-width: 419px) {
-    #title {
-        font-size: 2em;
-    }
-
-    #hero-text {
-        font-size: 0.8em;
-    }
 }

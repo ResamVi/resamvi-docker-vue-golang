@@ -1,0 +1,21 @@
+/* Responsive font size of 
+ * the small icons
+ */
+
+ @media only screen and (min-width: 614px) {
+    .icon {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 613px) {
+    .icon {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    .icon {
+        width: 50%;
+    }
+}

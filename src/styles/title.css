@@ -1,0 +1,30 @@
+/* Responsive font size of 
+ * title and description text 
+ */
+
+@media only screen and (min-width: 614px) {
+    #title {
+        font-size: 4em;
+    }
+    #hero-description {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 613px) {
+    #title {
+        font-size: 3em;
+    }
+    #hero-description {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 419px) {
+    #title {
+        font-size: 2em;
+    }
+    #hero-description {
+        font-size: 0.8em;
+    }
+}
