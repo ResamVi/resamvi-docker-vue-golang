@@ -1,9 +1,8 @@
 <h1 align="center">
-  <img src="https://resamvi.de/img/logo.png" width="200"></a>
+  <img src="https://resamvi.de/img/logo.png" width="300"></a>
   <br>
   ResamVitalized
 </h1>
-[![Build Status](https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master)](https://travis-ci.org/ResamVi/resamvitalized)
 
 A re-engineered version of my old website [https://resamvi.de/](https://resamvi.de/) using more advanced technologies.
 
@@ -14,7 +13,6 @@ These instructions are incomplete.
 ### Prerequisites
 
 Having Node.js installed to use `npm`
-
 
 ### Installing
 
@@ -35,7 +33,8 @@ Where `XXXX` is a port number of your choice.
 
 ## Built With
 
-* [Vue.js](https://vuejs.org/) 
+* [Vue.js](https://vuejs.org/)
+* [nginx](https://nginx.org/en/)
 
 
 ## Authors
@@ -44,7 +43,7 @@ Where `XXXX` is a port number of your choice.
 
 ## License
 
-This project is licensed under the MPL  - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MPL  - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
