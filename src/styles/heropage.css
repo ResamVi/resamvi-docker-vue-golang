@@ -8,6 +8,10 @@ html, body{
     height: auto;
 }
 
+.spacing {
+    margin: 0 10%;
+}
+
 #hero-page {
     margin: 0 10%;
     height: 100vh;
@@ -35,6 +39,12 @@ html, body{
 
 #hero-text {
     font-family: 'Space Mono';
+}
+
+#hero-logos {
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
 }
 
 #title {
