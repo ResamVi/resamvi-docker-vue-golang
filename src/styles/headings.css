@@ -1,0 +1,39 @@
+/* Responsive font size of 
+ * title and description text 
+ */
+
+ @media only screen and (min-width: 1050px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 710px) and (max-width: 1050px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: 0.83em;
+    }
+}

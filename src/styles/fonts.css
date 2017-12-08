@@ -9,7 +9,7 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+    src: url('../fonts/OpenSans-CondLight-webfont.ttf') format('truetype');
 }
 
 @font-face {
