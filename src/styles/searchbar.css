@@ -1,0 +1,12 @@
+#search-bar {
+    margin: 0 20%;
+}
+
+#search-field {
+    background-color: transparent;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    text-align: center;
+    margin-bottom:5%;
+    width:100%;
+}

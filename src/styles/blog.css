@@ -1,11 +1,22 @@
+.entry-date {
+    font-family: 'Cinzel';
+    color: #696969;
+}
+
+.entry-title {
+    margin-top:0px;
+}
+
 #main-blog {
     margin: 0 30%;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cinzel';
+    font-weight: 100;
 }
 
 ul, ol, p {
+    font-size: 1.5em;
     font-family: 'Open Sans';
 }

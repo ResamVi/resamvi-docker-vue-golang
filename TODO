@@ -10,3 +10,5 @@ https://amplify.nginx.com/signup/
 5. Put the everything and the configs together in a folde
 
 6. dont use nginx image but a simple debian image
+
+7. make entry text responsive
