@@ -1,0 +1,11 @@
+#main-blog {
+    margin: 0 30%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel';
+}
+
+ul, ol, p {
+    font-family: 'Open Sans';
+}
