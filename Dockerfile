@@ -15,6 +15,6 @@ RUN apt-get update
 RUN apt-get install -y mongodb
 
 # Run mongodb
-RUN mongod --config /etc/mongod.conf --fork
+CMD mongod --config /etc/mongod.conf
 
 EXPOSE 80
