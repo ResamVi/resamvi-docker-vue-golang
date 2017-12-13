@@ -1,17 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = {
     entry: './src/index.js',
+    
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js'
     },
+    
+    devtool: 'source-map',
+    
     module: {
         rules: [
+            {
+                test: /\.vue/,
+                use: ['vue-loader']
+            },
             {
                 test: /\.css/,
                 use: ExtractTextPlugin.extract({
@@ -47,7 +53,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            inject: 'head'
+            inject: 'body'
         })
-    ]
+    ],
+
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    }
 };
