@@ -12,3 +12,5 @@ https://amplify.nginx.com/signup/
 6. dont use nginx image but a simple debian image
 
 7. make entry text responsive
+
+8. no magic numbers in server. use constants

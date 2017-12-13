@@ -3,6 +3,11 @@
     color: #696969;
 }
 
+.entry-content {
+    font-size: 1.5em;
+    font-family: 'Open Sans';
+}
+
 .entry-title {
     margin-top:0px;
 }
@@ -16,7 +21,3 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
 }
 
-ul, ol, p {
-    font-size: 1.5em;
-    font-family: 'Open Sans';
-}
