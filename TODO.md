@@ -5,12 +5,6 @@ https://amplify.nginx.com/signup/
 
 3. Tree shaking?
 
-4. Remove unecessary css styles of materialize MANUALLY!
-
-5. Put the everything and the configs together in a folde
-
-6. dont use nginx image but a simple debian image
-
 7. make entry text responsive
 
 8. no magic numbers in server. use constants

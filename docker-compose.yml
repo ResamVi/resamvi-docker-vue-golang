@@ -1,0 +1,26 @@
+version: "3"  
+
+services:  
+  nginx:
+    image: nginx
+    volumes:
+      - ./srv/nginx.conf:/etc/nginx/nginx.conf
+      - ./build/:/usr/share/nginx/website
+    links: 
+      - mongodb
+    ports:
+      - "9001:9001"
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+  
+  go:
+    image: golang
+    volumes:
+      - ./srv/server.go:/srv/server.go
+    command: go run /srv/server.go
+    ports:
+      - "8080:8080"
+
