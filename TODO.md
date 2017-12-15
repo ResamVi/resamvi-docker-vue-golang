@@ -3,8 +3,8 @@ https://amplify.nginx.com/signup/
 
 2. Minify/Strip html/css/js files
 
-3. Tree shaking?
-
-7. make entry text responsive
-
 8. no magic numbers in server. use constants
+
+9. Need to change to 3.6 mongodb version
+
+10. Vue needs UTF-8 encoding
