@@ -1,6 +1,17 @@
 version: "3"  
 
 services:  
+  mongodb-seed:
+    image: bwnyasse/docker-mongodb-worker
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_DB_NAME=resamvi
+      - MONGO_COLLECTION_NAME=entries
+    depends_on:
+      - mongodb
+    command: "/start.sh -i"
+  
   mongodb:
     image: mongo:3.4-jessie
     volumes:
@@ -20,10 +31,10 @@ services:
   go:
     image: golang
     volumes:
-      - ./srv/server:/srv/server
-      - ./wait-for-it.sh:/wait-for-it.sh
+      - ../go/:/go/
+      - ./srv/server.go:/srv/server.go
+    command: go run /srv/server.go
     ports:
       - "8080:8080"
-    command: /srv/server
 
     
