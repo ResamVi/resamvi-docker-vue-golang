@@ -1,6 +1,8 @@
 version: "3"  
 
 services:  
+  
+  # Initialize nginx server that serves static files
   nginx:
     image: nginx
     volumes:
@@ -11,11 +13,27 @@ services:
     ports:
       - "9001:9001"
 
+  # Initialize database
   mongodb:
     image: mongo
     ports:
       - "27017:27017"
+
+  # Put written entries into database
+  mongodb-seed:
+    image: bwnyasse/docker-mongodb-worker
+    command: "/start.sh -i"
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_DB_NAME=worker
+      - MONGO_COLLECTION_NAME=users
+    depends_on:
+      - mongodb
+    volumes:
+      - ./srv/data:/tmp/mongodb/
   
+  # Run go server that handles dynamic entry loading
   go:
     image: golang
     volumes:
