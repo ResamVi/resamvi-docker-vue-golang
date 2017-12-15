@@ -6,6 +6,8 @@
 
 A re-engineered version of my old website [https://resamvi.de/](https://resamvi.de/) using more advanced technologies.
 
+[![Build Status](https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master)](https://travis-ci.org/ResamVi/resamvitalized)
+
 ## Getting Started
 
 These instructions are incomplete.
