@@ -13,6 +13,9 @@ services:
 
   mongodb:
     image: mongo
+    volumes:
+      - ./srv/mongodb.conf:/etc/mongodb.conf
+      - ./srv/data:/data/db
     ports:
       - "27017:27017"
   
@@ -20,7 +23,7 @@ services:
     image: golang
     volumes:
       - ./srv/server.go:/srv/server.go
-    command: go run /srv/server.go
     ports:
       - "8080:8080"
+    command: go run /srv/server.go
 

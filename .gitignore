@@ -2,4 +2,4 @@ resamvi.de/
 node_modules/
 .vscode/
 build/
-srv/server
+srv/data
