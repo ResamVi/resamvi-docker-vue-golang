@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: './src/index.js',
@@ -22,7 +23,12 @@ module.exports = {
                 test: /\.css/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader'
+                    use: {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }
                 })
             },
             {
@@ -53,8 +59,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            inject: 'body'
-        })
+            inject: 'body',
+            minify: {
+                html5: false,
+                removeComments: true, 
+                collapseWhitespace: true,
+            }
+        }),
+        
+        new UglifyJsPlugin()
     ],
 
     resolve: {

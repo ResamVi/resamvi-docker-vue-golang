@@ -4,7 +4,7 @@
   "description": " A re-engineered version of my old blog using more advanced technologies",
   "main": "src/index.js",
   "scripts": {
-    "webpack": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch",
     "test": "./node_modules/eslint/bin/eslint.js webpack.config.js src/**.js"
   },
@@ -32,6 +32,7 @@
     "image-webpack-loader": "^3.4.2",
     "script-loader": "^0.7.2",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "vue": "^2.5.9",
     "vue-loader": "^13.5.0",
     "vue-resource": "^1.3.4",

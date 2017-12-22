@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getPost: function() {
-      this.$http.get('http://localhost:8080').then(() => {
+      this.$http.get('http://localhost:8080/').then(() => {
         console.log('SUCCESS');
       });
     }
@@ -27,7 +27,5 @@ export default {
 </script>
 
 <style>
-  .message {
-    color: blue;
-  }
+  
 </style>
