@@ -37,6 +37,8 @@ export default
         */ 
         let onSuccess = function(response)
         {
+            console.log(this.$parent.entries);
+            this.$parent.entries.push(response.body);
             this.$data.entry = response.body;
         }
 

@@ -5,8 +5,6 @@ https://amplify.nginx.com/signup/
 
 9. Need to change to 3.6 mongodb version
 
-10. Vue needs UTF-8 encoding
-
 11. rewrite the whole docker shit
 
 12. date object should in vue should be a single object of multiple properties
