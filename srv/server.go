@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"encoding/json"
+	"io/ioutil"
 )
-
-var id int = 0
 
 type entry struct {
 	Number  int32
@@ -19,14 +19,41 @@ type entry struct {
 	Text  	string
 }
 
+const MaxEntries int = 13 // TODO: Dynamically get database size
+
 func handler(write http.ResponseWriter, reader *http.Request) {
 	
-	// Log
-	fmt.Printf("%s %s\nHost: %s %s\n\n", reader.Method, reader.Proto, reader.URL.Host, reader.URL.Path)
+	/* 
+	 * Handle CORS preflight requests.
+	 * A CORS preflight request is a CORS request that checks to see if the CORS protocol is understood.
+	 */
+	if reader.Method == "OPTIONS" {
+		
+		write.Header().Set("Access-Control-Allow-Origin", "*")
+		write.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		write.Header().Set("Content-Type", "application/json;charset=utf-8")
+		
+		// OK
+		write.WriteHeader(http.StatusOK)
+
+		return
+	}
+	
+	// Logging (read request body)
+	body, err := ioutil.ReadAll(reader.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	convert, err := strconv.Atoi(string(body))
+	if err != nil {
+		fmt.Println(err)
+	}
+	
+	fmt.Printf("%s, COUNT: %d\n", reader.Method, convert)
 	
 	// Connect to mongodb
 	session, err := mgo.Dial("localhost:27017")
-
 	if err != nil {
 		panic(err)
 	}
@@ -37,22 +64,21 @@ func handler(write http.ResponseWriter, reader *http.Request) {
 
 	// Select entry
 	result := entry{}
-	err = collection.Find(bson.M{"number": id}).One(&result)
-	if err != nil {
-		log.Fatal(err)
+	if convert < MaxEntries {
+		
+		err = collection.Find(bson.M{"number": convert}).One(&result)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
-
+	
 	// Prepare response
 	write.Header().Set("Access-Control-Allow-Origin", "*")
+	write.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	write.Header().Set("Content-Type", "application/json;charset=utf-8")
 	out, err := json.Marshal(result)
 
 	write.Write(out)
-
-	id = 0
-
-	// OK
-	write.WriteHeader(http.StatusOK)
 }
 
 func main() {

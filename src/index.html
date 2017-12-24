@@ -52,11 +52,11 @@
   <div id="main-blog">
 
     <!-- Display multiple entries -->
-    <entry v-for="entry in count"></entry>
-    
+    <entry v-for="entry in count" :key="entry"></entry>
+
     <!-- When scrolled to bottom, load more -->
-    <div v-infinite-scroll="loadEntry" infinite-scroll-distance="10"></div>
+    <div v-infinite-scroll="loadEntry"  infinite-scroll-distance="10"></div>
   </div>
 </body>
 
-</html>
+</html>	

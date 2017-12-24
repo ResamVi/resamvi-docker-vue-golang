@@ -19,6 +19,10 @@
     The data object consists of a single "entry" object
     of which the data is fetched from the database
     and stored in the appropriate properties "Date", "Title", "Text", "Number"
+
+    Vue resource has to be used, and it has to be version 0.9.3 because otherwise
+    POST does not seem to work (empty request body)
+    https://github.com/pagekit/vue-resource/issues/543#issuecomment-274419895
 -->
 <script>
 export default
@@ -26,10 +30,12 @@ export default
     data: function()
     {
         /**
-         * Get entry data from database
+         * Get entry data from database.
+         * Access the count variable from the parent (entire entry blog)
+         * to get the next entry in line to load
          */
-        let entry = {};
-        let connection = this.$http.get('http://localhost:8080/')
+        console.log("NEXT INDEX: " + this.$parent.count);
+        let connection = this.$http.post('http://localhost:8080/', this.$parent.count);
     
         /*
         * The response is a JSON object with 
@@ -37,9 +43,16 @@ export default
         */ 
         let onSuccess = function(response)
         {
-            console.log(this.$parent.entries);
-            this.$parent.entries.push(response.body);
-            this.$data.entry = response.body;
+            var entry = JSON.parse(response.body);
+            
+            this.$data.entry.Date = entry.Date;
+            this.$data.entry.Title = entry.Title;
+            this.$data.entry.Text = entry.Text;
+            this.$data.entry.Number = entry.Number;
+            //console.log(this.$data.entry);
+            console.log(JSON.parse(response.body));
+            //this.$data.entry = response.body;
+            //console.log(this.$parent.count);
         }
 
         /**
@@ -57,12 +70,25 @@ export default
          * display nothing.
          */
         return {
-            entry : {Date: "", Title:"", Text:""}
+            entry : {Date: "Loading", Title:"Loading", Text:"Loading"},
         }
     }
 }
 </script>
 
 <style>
-  
+    .entry-date {
+        font-family: 'Cinzel';
+        color: #696969;
+    }
+
+    .entry-title {
+        margin-top:0px;
+    }
+    
+    .entry-content {
+        font-family: 'Open Sans';
+        margin-bottom: 10%;
+        font-size: 1.5em;
+    }
 </style>

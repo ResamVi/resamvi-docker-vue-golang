@@ -17,7 +17,7 @@ require.context('./fonts/', false, /.*/);
 
 /* Configure Vue */
 Vue.use(VueResource);
-Vue.use(infiniteScroll)
+Vue.use(infiniteScroll);
 
 new Vue(
 {
@@ -27,14 +27,23 @@ new Vue(
     el: '#main-blog',
 
     /**
-     * Keep count of how many entries are displayed
+     * Keep count of how many entries are displayed.
+     * 
+     * The <div> tag with v-infinite-scroll in index.html will trigger a loadEntry event
+     * when the user scrolled down to the main blog.
+     * 
+     * Indexing of entries start at one. Thus the first increment in loadEntry will
+     * put the count variable at 1.
      */
     data:
     {
-        count: 0
+        count: 0,
+        busy: false
     },
 
     /**
+     * Used in index.html to display an entry entity
+     * 
      * An entry component has the correct html markup, style declarations
      * and methods declared to fetch the content and display it.
      * 
@@ -55,6 +64,11 @@ new Vue(
         loadEntry: function()
         {
             this.$data.count++;
+            this.$data.busy = true;
+
+            setTimeout(() => {
+                this.busy = false;
+            }, 10);
         }
     }
 });
