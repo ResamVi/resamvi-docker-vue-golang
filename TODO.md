@@ -9,22 +9,12 @@ https://amplify.nginx.com/signup/
 
 12. date object should in vue should be a single object of multiple properties
 
-<script>
-    function hello() {
-      console.log("Hello");
+14. Need new syntax highlighter
 
-      var http = new XMLHttpRequest();
-      var url = "http://localhost:8080/";
-      var params = "foo=bar";
+15. host the github images 
 
-      http.open("POST", url);
-      http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+16. käse kuchen titel 
 
-      http.onreadystatechange = function () { //Call a function when the state changes.
-        if (http.readyState == 4 && http.status == 200) {
-          console.log(JSON.parse(http.responseText));
-        }
-      }
-      http.send(params);
-    }
-</script> 
+17. rheinuferlauf muss noch geändert werden
+
+18. export entries

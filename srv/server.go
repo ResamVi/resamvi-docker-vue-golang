@@ -13,7 +13,7 @@ import (
 )
 
 type entry struct {
-	Number  int32
+	Number  int32	// TODO: Necessary?
 	Title	string
 	Date  	string
 	Text  	string

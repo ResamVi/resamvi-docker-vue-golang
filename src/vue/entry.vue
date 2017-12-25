@@ -18,11 +18,11 @@
 <!--
     The data object consists of a single "entry" object
     of which the data is fetched from the database
-    and stored in the appropriate properties "Date", "Title", "Text", "Number"
+    and stored in the appropriate properties "Date", "Title", "Text"
 
-    Vue resource has to be used, and it has to be version 0.9.3 because otherwise
-    POST does not seem to work (empty request body)
-    https://github.com/pagekit/vue-resource/issues/543#issuecomment-274419895
+    By sending an HTTP POST request to localhost:8080 the associated go server
+    responsible for fetching entries off the mongodb database is called and
+    returns the date/title/content
 -->
 <script>
 export default
@@ -34,36 +34,36 @@ export default
          * Access the count variable from the parent (entire entry blog)
          * to get the next entry in line to load
          */
-        console.log("NEXT INDEX: " + this.$parent.count);
-        let connection = this.$http.post('http://localhost:8080/', this.$parent.count);
-    
+        const DONE = 4;
+        const SUCCESS = 200;
+
+        /**
+         * Send a http post request to the service responsible for
+         * fetching entries out of the database.
+         */
+        var http = new XMLHttpRequest();
+        var url = "http://localhost:8080/";
+        var params = this.$parent.count;
+
+        http.open("POST", url);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
         /*
         * The response is a JSON object with 
         * Number, Text, Date, Title properties (see server.go)
-        */ 
-        let onSuccess = function(response)
+        */
+        http.onload = function ()
         {
-            var entry = JSON.parse(response.body);
-            
-            this.$data.entry.Date = entry.Date;
-            this.$data.entry.Title = entry.Title;
-            this.$data.entry.Text = entry.Text;
-            this.$data.entry.Number = entry.Number;
-            //console.log(this.$data.entry);
-            console.log(JSON.parse(response.body));
-            //this.$data.entry = response.body;
-            //console.log(this.$parent.count);
-        }
-
-        /**
-         * Error handling
-         */
-        let onFailure = function()
-        {
-            console.log('ERROR');
-        }
-
-        connection.then(onSuccess, onFailure);
+            if (http.readyState == DONE && http.status == SUCCESS)
+            {
+                var entry = JSON.parse(http.responseText);
+                this.entry.Date = entry.Date;
+                this.entry.Title = entry.Title;
+                this.entry.Text = entry.Text;
+            }
+        }.bind(this);
+        
+        http.send(params);
         
         /**
          * While the entry is fetched from database (the code above is async)

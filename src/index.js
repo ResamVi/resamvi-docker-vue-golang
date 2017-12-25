@@ -1,7 +1,5 @@
 import Vue from 'vue';
-import VueResource from 'vue-resource';
-import infiniteScroll from 'vue-infinite-scroll'
-
+import infiniteScroll from 'vue-infinite-scroll';
 
 /* Vue Components */
 import Entry from './vue/entry.vue';
@@ -10,17 +8,15 @@ import Entry from './vue/entry.vue';
 require.context('./styles/', false, /.*/);
 
 /* Images */
-require.context('./img/', false, /.*/);
+require.context('./img/', true, /.*/);
 
 /* Fonts */
 require.context('./fonts/', false, /.*/);
 
 /* Configure Vue */
-Vue.use(VueResource);
 Vue.use(infiniteScroll);
 
-new Vue(
-{
+new Vue({
     /**
      * Use the div tag to dynamically load entries
      */
@@ -35,8 +31,7 @@ new Vue(
      * Indexing of entries start at one. Thus the first increment in loadEntry will
      * put the count variable at 1.
      */
-    data:
-    {
+    data: {
         count: 0,
         busy: false
     },
@@ -50,8 +45,7 @@ new Vue(
      * Uses VueResource  to fetch the data from a mongodb database
      * at localhost:27017 which is served by a Go service
      */
-    components:
-    { 
+    components: {
         Entry
     },
 
@@ -59,10 +53,8 @@ new Vue(
      * The infiniteScroll plugin uses this event method when the user
      * scrolled down completely 
      */
-    methods:
-    {
-        loadEntry: function()
-        {
+    methods: {
+        loadEntry: function () {
             this.$data.count++;
             this.$data.busy = true;
 

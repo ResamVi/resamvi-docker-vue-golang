@@ -35,7 +35,6 @@
     "uglifyjs-webpack-plugin": "^1.1.4",
     "vue": "^2.5.9",
     "vue-loader": "^13.5.0",
-    "vue-resource": "0.9.3",
     "vue-template-compiler": "^2.5.9",
     "webpack": "^3.10.0"
   },
