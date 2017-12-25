@@ -58,9 +58,11 @@ func handler(write http.ResponseWriter, reader *http.Request) {
 		fmt.Println(err)
 	}
 
+	// Return most recent entry first. 
+	// Entries (i.e. convert) are numbered from 1 (the oldest) upwards to total
 	entryNumber := total + 1 - convert
 
-	// Select entry
+	// Select entry, as long as there are entries left
 	result := entry{}
 	if entryNumber > 0 {
 		

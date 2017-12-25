@@ -15,10 +15,19 @@ module.exports = {
     
     module: {
         rules: [
+            
+            /**
+             * Vue files containing components have to be correctly interpreted
+             */
             {
                 test: /\.vue/,
                 use: ['vue-loader']
             },
+            
+            /**
+             *  CSS Files for the website have to be concatenated and minimized
+             * into a single style.css file
+             */
             {
                 test: /\.css/,
                 use: ExtractTextPlugin.extract({
@@ -31,8 +40,13 @@ module.exports = {
                     }
                 })
             },
+
+            /**
+             * Images should be stored inside the img folder
+             * TODO: compress images
+             */
             {
-                test: /\.(gif|png|jpe?g|ico)/,
+                test: /\.(gif|png|jpe?g|ico|webm)/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -41,6 +55,10 @@ module.exports = {
                     }
                 }]
             },
+
+            /**
+             * Fonts are stored inside the font folder
+             */
             {
                 test: /\.(woff2|woff|otf|ttf)/,
                 use: [{
@@ -48,6 +66,21 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'fonts/'
+                    }                    
+                }]
+            },
+
+            /**
+             * zip/tar files (to download spayle)
+             * should be stored inside the resources folder
+             */
+            {
+                test: /\.(zip|tar)/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'resources/'
                     }                    
                 }]
             }

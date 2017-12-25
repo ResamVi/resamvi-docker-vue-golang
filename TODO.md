@@ -18,3 +18,9 @@ https://amplify.nginx.com/signup/
 17. rheinuferlauf muss noch geändert werden
 
 18. export entries to json
+
+19. compress images with a webpack plugin
+
+20. Look for different font type variants
+
+21. how to get resamvi.de/apfelkuchen => apfelkuchen entry?
