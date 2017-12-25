@@ -19,7 +19,7 @@ type entry struct {
 	Text  	string
 }
 
-const MaxEntries int = 13 // TODO: Dynamically get database size
+var collection *mgo.Collection
 
 func handler(write http.ResponseWriter, reader *http.Request) {
 	
@@ -51,24 +51,18 @@ func handler(write http.ResponseWriter, reader *http.Request) {
 	}
 	
 	fmt.Printf("%s, COUNT: %d\n", reader.Method, convert)
-	
-	// Connect to mongodb
-	session, err := mgo.Dial("localhost:27017")
-	if err != nil {
-		panic(err)
-	}
-	defer session.Close()
 
-	// Connect database
-	collection := session.DB("resamvi").C("entries")
-	
 	// Get latest entry number
 	total, err := collection.Count()
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	entryNumber := total + 1 - convert
 
 	// Select entry
 	result := entry{}
-	if convert < MaxEntries {
+	if entryNumber > 0 {
 		
 		err = collection.Find(bson.M{"number": entryNumber}).One(&result)
 		if err != nil {
@@ -85,10 +79,29 @@ func handler(write http.ResponseWriter, reader *http.Request) {
 	write.Write(out)
 }
 
+func connectDB() *mgo.Session {
+
+	fmt.Println("Connecting to database")
+	
+	session, err := mgo.Dial("localhost:27017")
+	if err != nil {
+		fmt.Println("Could not connect to database", err)
+		return nil
+	}
+
+	collection = session.DB("resamvi").C("entries")
+
+	fmt.Println("Connection established.")
+	return session
+}
+
 func main() {
 
 	fmt.Println("Setup server on port 8080")
 
+	session := connectDB()
+	defer session.Close()
+	
 	// Setup handlers
 	http.HandleFunc("/", handler)
 
@@ -97,4 +110,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+
 }

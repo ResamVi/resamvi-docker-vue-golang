@@ -17,4 +17,4 @@ https://amplify.nginx.com/signup/
 
 17. rheinuferlauf muss noch geändert werden
 
-18. export entries
+18. export entries to json
