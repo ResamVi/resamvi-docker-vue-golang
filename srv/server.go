@@ -61,12 +61,16 @@ func handler(write http.ResponseWriter, reader *http.Request) {
 
 	// Connect database
 	collection := session.DB("resamvi").C("entries")
+	
+	// Get latest entry number
+	total, err := collection.Count()
+	entryNumber := total + 1 - convert
 
 	// Select entry
 	result := entry{}
 	if convert < MaxEntries {
 		
-		err = collection.Find(bson.M{"number": convert}).One(&result)
+		err = collection.Find(bson.M{"number": entryNumber}).One(&result)
 		if err != nil {
 			log.Fatal(err)
 		}
