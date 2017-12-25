@@ -1,0 +1,18 @@
+.italic {
+    font-style: italic;
+}
+
+.img-responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.spacing {
+    margin: 0 10%;
+}
+
+.aligned {
+    display:flex;
+    align-items:center;
+}

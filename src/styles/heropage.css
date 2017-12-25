@@ -2,16 +2,6 @@ html, body{
     margin: 0;
 }
 
-.responsive {
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
-
-.spacing {
-    margin: 0 10%;
-}
-
 #hero-page {
     margin: 0 10%;
     height: 100vh;
