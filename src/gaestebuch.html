@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ResamVi | Gästebuch</title>
+  
+  <meta name="keywords" content="resamvi, resamvi.de, julien, midedji, blog, technologie, laufen, backen">
+  <meta name="description" content="ResamVi: Ein Blog von Julien Midedji">
+  <meta name="referrer" content="same-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+
+  <link rel="icon" href="img/favicon.ico" type="image/gif" size="48x48">
+</head>
+
+<body>
+
+  <section class="jumbotron blog-start">
+    <div style="width: 100%;">
+      <div class="row caption">
+        <h1 class="title">Gästebuch</h1>
+      </div>
+
+      <div id="fail" class="col-md-offset-4 col-md-4 alert" style="border">
+        Bitte beweise, dass du ein Mensch bist.
+      </div>
+
+      <div class="col-md-offset-4 col-md-4">
+        <form id="form" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" class="form-control" id="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail (optional)">
+          </div>
+          <div class="form-group">
+            <label for="content">Inhalt</label>
+            <textarea class="form-control" id="content" rows="3" name="content" placeholder="Fühl dich frei mich in jeder Art zu kritiseren.
+Ich behalte mir jedoch vor alles Extreme zu löschen." required></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 g-recaptcha" data-sitekey="6LepQyAUAAAAAGTGHOhumDTpFEczGIuvUWUvUiDx"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <button type="submit" class="btn btn-default">Bestätigen</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="row" id="guestbook-entries">
+    <!--<?php          
+      // *************************************** CONNECT ************************************************
+      $conn = new mysqli("localhost", "resatult", "Z2DYTa7-YnVHN", "resatult_data");
+      $conn->set_charset("utf8");
+      if ($conn->connect_errno) {
+          printf("Connect failed: %s\n", $mysqli->connect_error);
+          exit();
+      }
+
+      // *************************************** FETCH & DISPLAY ****************************************
+      $query = "SELECT * FROM entries ORDER by ID DESC";
+      if ($data = $conn->query($query)) {
+          while ($entry = $data->fetch_assoc()) {
+              $date       = strip_tags($entry["date"]);
+              $name       = strip_tags($entry["name"]);
+              $message    = nl2br(strip_tags($entry["message"]));
+              echo
+              "<div class=\"guestbook-entry\">
+                  <h4 class=\"entry-date\">" . $date . "</h4>
+                  <h2 class=\"guestbook-title\">" . $name . "</h2>
+                  <div class=\"guestbook-content\">" . $message . "</div>
+              </div>
+              <hr class=\"style\">";
+          }
+          $data->free();
+      }
+      $conn->close();
+      ?>-->
+  </section>
+</body>
+
+</html>
+
+<!--<?php
+// Used to combat evil user inputs
+function fix($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    $data = strip_tags($data);
+    return $data;
+}
+
+// RECAPTCHA
+$captcha    = $_POST["g-recaptcha-response"];
+$secretKey  = "6LepQyAUAAAAADabd_wC3R9-JrMkJKxUhvLYDMhD";
+$ip         = $_SERVER['REMOTE_ADDR'];
+$response   = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+
+$responseKeys = json_decode($response, true);
+
+if(intval($responseKeys["success"]) === 1) {
+
+    // *************************************** SEND ************************************************
+    if(!empty($_POST)) {
+
+        $conn = new mysqli("localhost", "resatult", "Z2DYTa7-YnVHN", "resatult_data");
+        $conn->set_charset("utf8");
+
+        // check connection
+        if ($conn->connect_errno) {
+            printf("Connect failed: %s\n", $mysqli->connect_error);
+            exit();
+        }
+
+        // Get data
+        $ip = $_SERVER["REMOTE_ADDR"];
+        $date = date("j. F Y");
+        $name = fix($_POST["name"]);
+        $email = fix($_POST["email"]);
+        $content = fix($_POST["content"]);
+        $captcha = $_POST["g-recaptcha-response"];
+
+        $query = "INSERT INTO entries (id, ip, date, name, email, message) VALUES (\"\", \""
+            . $ip . "\", \""
+            . $date . "\", \""
+            . $name . "\", \""
+            . $email . "\", \""
+            . $content . "\")";
+
+        $conn->query($query);
+
+        // close connection
+        $conn->close();
+    }
+}?>-->

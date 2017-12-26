@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ResamVi | Code, Edit, Baking</title>
+
+  <meta name="keywords" content="resamvi, resamvi.de, julien, midedji, blog, technologie, laufen, backen">
+  <meta name="description" content="ResamVi: Ein Blog von Julien Midedji">
+  <meta name="referrer" content="same-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+
+  <link rel="icon" href="img/favicon.ico" type="image/gif" size="48x48">
+  <script type="text/javascript" src="index.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HERO PAGE -->
+  <div id="single-page">
+
+    <div id="free-space"></div>
+
+    <div id="hero-image">
+      <img src="img/logo.png" class="responsive">
+      <img src="img/verticalLine.png" id="verticalLine">
+      <span id="title">ResamVi</span>
+    </div>
+
+    <div id="hero-description">
+      <div>Hey, ich bin Julien.
+        <br>Informatikstudent.</div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div id="main-blog">
+    <section>
+      <span class="entry-date">12. Järzember, 1337</span>
+      <h1 class="entry-title">Riding horses considered harmful</h1>
+      <div class="entry-content" v-html="entry.Text">
+        Meine Meinung zu diesem Thema bleibt zwiespältig.
+      </div>
+      <div class="footer">
+        <a href="gaestebuch.html" id="button">
+          <div title="Zum Gästebuch">
+            <img src="img/book.jpg" alt="door">
+          </div>
+        </a>
+        <a href="impressum.html" id="button">
+          <div title="Zurück zur Homepage">
+            <img src="img/door.jpg" alt="door">
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

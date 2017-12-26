@@ -15,7 +15,7 @@ module.exports = {
     
     module: {
         rules: [
-            
+
             /**
              * Vue files containing components have to be correctly interpreted
              */
@@ -89,6 +89,9 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('style.css'),
         
+        /**
+         * Export index.html, the main blog.
+         */
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
@@ -100,6 +103,36 @@ module.exports = {
             }
         }),
         
+        /**
+         * Via an entry you can go to
+         * the guest book for discussions.
+         */
+        new HtmlWebpackPlugin({
+            filename: 'gaestebuch.html',
+            template: './src/gaestebuch.html',
+            inject: 'head',
+            minify: {
+                html5: false,
+                removeComments: true, 
+                collapseWhitespace: true,
+            }
+        }),
+
+        /**
+         * Export impressum.html containing
+         * a proverb of me and a picture.
+         */
+        new HtmlWebpackPlugin({
+            filename: 'impressum.html',
+            template: './src/impressum.html',
+            inject: 'head',
+            minify: {
+                html5: false,
+                removeComments: true, 
+                collapseWhitespace: true,
+            }
+        }),
+
         new UglifyJsPlugin()
     ],
 

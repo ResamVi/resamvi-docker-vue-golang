@@ -12,6 +12,18 @@
     <span class="entry-date">{{ entry.Date }}</span>
     <h1 class="entry-title">{{ entry.Title }}</h1>
     <div class="entry-content" v-html="entry.Text"></div>
+    <div class="footer">
+        <a href="gaestebuch.html" id="button">
+          <div title="Zum Gästebuch">
+            <img src="img/book.jpg" alt="door">
+          </div>
+        </a>
+        <a href="impressum.html" id="button">
+          <div title="Zurück zur Homepage">
+            <img src="img/door.jpg" alt="door">
+          </div>
+        </a>
+      </div>
   </section>
 </template>
 

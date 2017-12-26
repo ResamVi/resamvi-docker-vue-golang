@@ -7,6 +7,11 @@ html, body{
     height: 100vh;
 }
 
+#single-page {
+    margin: 0 10%;
+    height: 70vh;
+}
+
 #free-space {
     height:22%;
 }
