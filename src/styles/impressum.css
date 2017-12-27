@@ -1,15 +1,23 @@
-.center {
+#title {
+    font-family: Cinzel,serif;
     text-align: center;
+    font-size: 4em;
 }
 
-.cite {
+#quote {
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 2em;
+}
+
+#cite {
     text-align:right;
     font-size: .6em;
 }
 
 #proverb {
     font-family: 'Open Sans';
-    text-align: center;
+    text-align: justify;
     margin-bottom: 10%;
     font-size: 1.5em;
 }

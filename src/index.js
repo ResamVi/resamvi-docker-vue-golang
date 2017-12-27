@@ -1,3 +1,9 @@
+/**
+ * ========== INDEX PAGE ==========
+ * A re-engineered version of my old website https://resamvi.de/ using more advanced technologies.
+ * - Julien Midedji	
+ */
+
 import Vue from 'vue';
 import infiniteScroll from 'vue-infinite-scroll';
 

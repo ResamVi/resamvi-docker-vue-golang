@@ -134,6 +134,9 @@ module.exports = {
             }
         }),
 
+        /**
+         * Just copy the SPAYLE game without any processing
+         */
         new CopyWebpackPlugin([
             { from: 'src/game/', to: 'game/' }
         ]),

@@ -1,0 +1,50 @@
+/* Same as blog-entries but for guest book */
+
+#guestbook-entries {
+    background-color: #f5f2f0;
+    padding-bottom: 25px;
+    border-radius: 25px;
+    
+    margin: 5% auto;
+    width: 50%;
+}
+
+/* Dates put above titles in entries*/
+.guestbook-date {
+    font-family: 'Cinzel', serif;
+    color: #696969;
+    margin: 0;
+    padding-top: 25px;
+  }
+
+/* For the name of blog entries */
+
+.guestbook-title {
+    font-family: 'Cinzel', serif;
+    margin: 10px 0;
+}
+
+
+/* Actual guestbook entry */
+
+.guestbook-content {
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    font-size: 1.5em;
+    margin-bottom: 5%;
+}
+
+
+/* Wrapper for single guest book entry */
+
+.guestbook-entry {
+    margin-left: 10%;
+}
+
+hr.style {
+    border: 0;
+    height: 1px;
+    width: 80%;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
