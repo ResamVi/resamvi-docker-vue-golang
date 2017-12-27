@@ -69,21 +69,6 @@ module.exports = {
                         outputPath: 'fonts/'
                     }                    
                 }]
-            },
-
-            /**
-             * zip/tar files (to download spayle)
-             * should be stored inside the resources folder
-             */
-            {
-                test: /\.(zip|tar)/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'resources/'
-                    }                    
-                }]
             }
         ]
     },
