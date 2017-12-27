@@ -11,8 +11,6 @@ https://amplify.nginx.com/signup/
 
 14. Need new syntax highlighter
 
-15. host the github images 
-
 16. käse kuchen titel 
 
 17. rheinuferlauf muss noch geändert werden
@@ -24,3 +22,7 @@ https://amplify.nginx.com/signup/
 20. Look for different font type variants
 
 21. how to get resamvi.de/apfelkuchen => apfelkuchen entry?
+
+22. do not use * for CORS header
+
+23. hacktoberfest aufs lebenslauf
