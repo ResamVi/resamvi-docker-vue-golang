@@ -4,16 +4,10 @@
   ResamVitalized
 </h1>
 <p align="center">
-<<<<<<< HEAD
-<a href="https://travis-ci.org/ResamVi/resamvitalized"> <img src="https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master"></a>
-<a href="https://codeclimate.com/github/ResamVi/resamvitalized/maintainability"><img src="https://api.codeclimate.com/v1/badges/d3dd3d9b21beb3ffd798/maintainability" /></a>
-</p>
-=======
   <a href="https://travis-ci.org/ResamVi/resamvitalized"> <img src="https://travis-ci.org/ResamVi/resamvitalized.svg?branch=master"></a>
   <a href="https://codeclimate.com/github/ResamVi/resamvitalized/maintainability"><img src="https://api.codeclimate.com/v1/badges/d3dd3d9b21beb3ffd798/maintainability" /></a>
 </p>
 
->>>>>>> ff88daa4361510896df9c15d30889875e2a4d545
 A re-engineered version of my old website [https://resamvi.de/](https://resamvi.de/) using more advanced technologies.
 
 ## Getting Started
