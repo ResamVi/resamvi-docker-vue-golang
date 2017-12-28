@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ResamVi | Gästebuch</title>
+  
+  <meta name="keywords" content="resamvi, resamvi.de, julien, midedji, blog, technologie, laufen, backen">
+  <meta name="description" content="ResamVi: Ein Blog von Julien Midedji">
+  <meta name="referrer" content="same-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+
+  <link rel="icon" href="img/favicon.ico" type="image/gif" size="48x48">
+</head>
+
+<body>
+
+  <!-- HERO PAGE -->
+  <div style="margin:0 20%">
+  
+      <h1 id="title">Gästebuch</h1>
+      
+      <form id="form" method="post">
+          
+        <label for="name">Name</label>
+        <input type="name" class="form-input" name="name" placeholder="Name" required>
+      
+      
+        <label for="email">E-Mail</label>
+        <input type="email" class="form-input" name="email" placeholder="E-Mail (optional)">
+      
+      
+        <label for="content">Inhalt</label>
+        <textarea class="form-textarea" rows="3" name="content" placeholder="Fühl dich frei mich in jeder Art zu kritiseren.
+  Ich behalte mir jedoch vor alles Extreme zu löschen." required></textarea>
+      
+      
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 g-recaptcha" data-sitekey="6LepQyAUAAAAAGTGHOhumDTpFEczGIuvUWUvUiDx"></div>
+        </div>  
+      
+      </form>
+      <div class="center">
+          <button type="submit" class="btn">Bestätigen</button>
+      </div>
+
+  </div>
+
+  <h1 id="title">Einträge</h1>
+  <section id="guestbook-entries">
+      <div class="guestbook-entry">
+          <h4 class="guestbook-date">12. May 2017</h4>
+          <h2 class="guestbook-title">Julien Midedji</h2>
+          <div class="guestbook-content">Hallo Welt</div>
+      </div>
+      <hr class="style">
+      <div class="guestbook-entry">
+          <h4 class="guestbook-date">12. May 2017</h4>
+          <h2 class="guestbook-title">Julien Midedji</h2>
+          <div class="guestbook-content">Hallo Welt</div>
+      </div>
+      <hr class="style">
+  </section>
+</body>
+
+</html>

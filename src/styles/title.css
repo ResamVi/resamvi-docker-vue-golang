@@ -3,7 +3,7 @@
  */
 
 @media only screen and (min-width: 614px) {
-    #title {
+    #resamvi {
         font-size: 4em;
     }
     #hero-description {
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (min-width: 420px) and (max-width: 613px) {
-    #title {
+    #resamvi {
         font-size: 3em;
     }
     #hero-description {
@@ -21,7 +21,7 @@
 }
 
 @media only screen and (max-width: 419px) {
-    #title {
+    #resamvi {
         font-size: 2em;
     }
     #hero-description {

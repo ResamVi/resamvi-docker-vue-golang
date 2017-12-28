@@ -91,7 +91,7 @@ func connectDB() *mgo.Session {
 		return nil
 	}
 
-	collection = session.DB("resamvi").C("entries")
+	collection = session.DB("entries").C("blog")
 
 	fmt.Println("Connection established.")
 	return session
