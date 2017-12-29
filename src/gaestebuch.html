@@ -3,7 +3,7 @@
 
 <head>
   <title>ResamVi | Gästebuch</title>
-  
+
   <meta name="keywords" content="resamvi, resamvi.de, julien, midedji, blog, technologie, laufen, backen">
   <meta name="description" content="ResamVi: Ein Blog von Julien Midedji">
   <meta name="referrer" content="same-origin">
@@ -17,49 +17,49 @@
 
   <!-- HERO PAGE -->
   <div style="margin:0 20%">
-  
-      <h1 id="title">Gästebuch</h1>
-      
-      <form id="form" method="post">
-          
-        <label for="name">Name</label>
-        <input type="name" class="form-input" name="name" placeholder="Name" required>
-      
-      
-        <label for="email">E-Mail</label>
-        <input type="email" class="form-input" name="email" placeholder="E-Mail (optional)">
-      
-      
-        <label for="content">Inhalt</label>
-        <textarea class="form-textarea" rows="3" name="content" placeholder="Fühl dich frei mich in jeder Art zu kritiseren.
+
+    <h1 id="title">Gästebuch</h1>
+
+    <form id="form" method="post" action="http://127.0.0.1:8081/send">
+
+      <label for="name">Name</label>
+      <input type="name" class="form-input" name="name" placeholder="Name" required>
+
+
+      <label for="email">E-Mail</label>
+      <input type="email" class="form-input" name="email" placeholder="E-Mail (optional)">
+
+
+      <label for="content">Inhalt</label>
+      <textarea class="form-textarea" rows="3" name="content" placeholder="Fühl dich frei mich in jeder Art zu kritiseren.
   Ich behalte mir jedoch vor alles Extreme zu löschen." required></textarea>
-      
-      
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 g-recaptcha" data-sitekey="6LepQyAUAAAAAGTGHOhumDTpFEczGIuvUWUvUiDx"></div>
-        </div>  
-      
-      </form>
-      <div class="center">
-          <button type="submit" class="btn">Bestätigen</button>
+
+
+      <div class="row">
+        <div data-sitekey="6LepQyAUAAAAAGTGHOhumDTpFEczGIuvUWUvUiDx"></div>
       </div>
+
+      <div class="center">
+        <input type="submit" class="btn" value="Bestätigen">
+      </div>
+
+    </form>
+
 
   </div>
 
   <h1 id="title">Einträge</h1>
   <section id="guestbook-entries">
-      <div class="guestbook-entry">
-          <h4 class="guestbook-date">12. May 2017</h4>
-          <h2 class="guestbook-title">Julien Midedji</h2>
-          <div class="guestbook-content">Hallo Welt</div>
-      </div>
-      <hr class="style">
-      <div class="guestbook-entry">
-          <h4 class="guestbook-date">12. May 2017</h4>
-          <h2 class="guestbook-title">Julien Midedji</h2>
-          <div class="guestbook-content">Hallo Welt</div>
-      </div>
-      <hr class="style">
+
+    <!-- Golang template directives -->
+    {{range .}}
+    <div class="guestbook-entry">
+      <h4 class="guestbook-date">{{ .Date }}</h4>
+      <h2 class="guestbook-title">{{ .Name }}</h2>
+      <div class="guestbook-content">{{ .Message }}</div>
+    </div>
+    <hr class="style"> {{ end }}
+
   </section>
 </body>
 

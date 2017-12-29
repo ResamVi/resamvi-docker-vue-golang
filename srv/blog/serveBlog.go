@@ -5,7 +5,8 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-
+	"strings"
+	
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"encoding/json"
@@ -21,8 +22,27 @@ type entry struct {
 
 var collection *mgo.Collection
 
+func main() {
+
+	fmt.Println("Setup serveBlog on port 8080")
+
+	session := connectDB()
+	defer session.Close()
+	
+	// Setup handlers
+	http.HandleFunc("/", handler)
+
+	// Listen
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func handler(write http.ResponseWriter, reader *http.Request) {
 	
+	fmt.Println(formatRequest(reader))
+
 	/* 
 	 * Handle CORS preflight requests.
 	 * A CORS preflight request is a CORS request that checks to see if the CORS protocol is understood.
@@ -97,21 +117,26 @@ func connectDB() *mgo.Session {
 	return session
 }
 
-func main() {
-
-	fmt.Println("Setup server on port 8080")
-
-	session := connectDB()
-	defer session.Close()
-	
-	// Setup handlers
-	http.HandleFunc("/", handler)
-
-	// Listen
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal(err)
+// formatRequest generates ascii representation of a request
+func formatRequest(r *http.Request) string {
+	// Create return string
+	var request []string
+   
+	// Add the request string
+	url := fmt.Sprintf("%v %v %v", r.Method, r.URL, r.Proto)
+	request = append(request, url)
+   
+	// Add the host
+	request = append(request, fmt.Sprintf("Host: %v", r.Host))
+   
+	// Loop through headers
+	for name, headers := range r.Header {
+	  name = strings.ToLower(name)
+	  for _, h := range headers {
+		request = append(request, fmt.Sprintf("%v: %v", name, h))
+	  }
 	}
-
-
+   
+	 // Return the request as a string
+	 return strings.Join(request, "\n")
 }

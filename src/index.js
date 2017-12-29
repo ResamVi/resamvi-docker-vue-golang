@@ -19,9 +19,6 @@ require.context('./img/', true, /.*/);
 /* Fonts */
 require.context('./fonts/', false, /.*/);
 
-/* Resources */
-require.context('./resources/', false, /.*/);
-
 /* Configure Vue */
 Vue.use(infiniteScroll);
 

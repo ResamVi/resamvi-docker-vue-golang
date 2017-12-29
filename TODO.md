@@ -26,3 +26,11 @@ https://amplify.nginx.com/signup/
 22. do not use * for CORS header
 
 23. hacktoberfest aufs lebenslauf
+
+24. über konsole auf eine website zugreifen (wget?)
+
+25. services sollen nicht abstürzen wenn man anderweitig auf sie zugreift 
+
+26. serveGuestbook braucht keine globale variable
+
+27. script einfügen in guest book entry
