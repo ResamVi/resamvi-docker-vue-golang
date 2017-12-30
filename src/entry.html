@@ -24,22 +24,20 @@
     <div id="hero-image">
       <img src="img/logo.png" class="responsive">
       <img src="img/verticalLine.png" id="verticalLine">
-      <span id="title">ResamVi</span>
-    </div>
-
-    <div id="hero-description">
-      <div>Hey, ich bin Julien.
-        <br>Informatikstudent.</div>
-    </div>
+      <div id="singlepage">
+        <span id="resamvi">ResamVi</span><br>
+        <div id="hero-description">Hey, Julien hier.</div>
+      </div>
+    </div>        
   </div>
 
   <!-- Body -->
   <div id="main-blog">
     <section>
-      <span class="entry-date">12. Järzember, 1337</span>
-      <h1 class="entry-title">Riding horses considered harmful</h1>
+      <span class="entry-date">{{ .Date }}</span>
+      <h1 class="entry-title">{{ .Title }}</h1>
       <div class="entry-content" v-html="entry.Text">
-        Meine Meinung zu diesem Thema bleibt zwiespältig.
+        {{ .Text }}
       </div>
       <div class="footer">
         <a href="gaestebuch.html" id="button">

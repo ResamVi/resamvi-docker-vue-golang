@@ -34,3 +34,8 @@ https://amplify.nginx.com/signup/
 26. serveGuestbook braucht keine globale variable
 
 27. script einfügen in guest book entry
+
+28. use grid layout in a single layout.css file
+
+29. Bundle serveXXX files together to one package with a single main and multiple handler names on one port
+and use different colors to log

@@ -1,11 +1,25 @@
-package main
+	package main
 
 import (
 	"fmt"
+	"bytes"
 	"net/http"
+	"text/template"
 	"log"
 	"strings"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
+	"fatih/color"
+	"strconv"
 )
+
+type singleEntry struct {
+	Number  int32	// TODO: Necessary?
+	URL		string
+	Title	string
+	Date  	string
+	Text  	string
+}
 
 func main() {
 
@@ -24,7 +38,44 @@ func main() {
 func handler(write http.ResponseWriter, reader *http.Request) {
 
 	//fmt.Println(formatRequest(reader))
-	fmt.Println(reader.URL)
+	color.Red(reader.URL.Path[1:])
+
+	// Print client information that connected
+	fmt.Println(formatRequest(reader) + "\n")
+
+	// Connect to database
+	fmt.Println("Connecting to database")
+
+	session, err := mgo.Dial("localhost:27017")
+	if err != nil {
+		fmt.Println("Could not connect to database", err)
+	}
+
+	collection := session.DB("entries").C("blog")
+
+	fmt.Println("Connection established.")
+
+	// Get all the entries from the database
+	entry := singleEntry{}
+	
+	entryNumber, _ := strconv.Atoi(reader.URL.Path[1:])
+	
+	err = collection.Find(bson.M{"number": entryNumber}).One(&entry)
+	if err != nil {
+		fmt.Println("COULD NOT FIND:", err)
+	}
+
+	t := template.Must(template.ParseFiles("../../build/entry.html"))
+	
+	buffer := new(bytes.Buffer)
+	
+	err = t.Execute(buffer, entry)
+	
+	if err != nil {
+		fmt.Println(err)
+	}
+	
+	write.Write(buffer.Bytes())
 
 }
 
