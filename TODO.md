@@ -1,41 +1,29 @@
-1. Add amplify for nginx monitoring
+# Security
+- HTTP/TCP unit tests und stress tests
+
+- script einfügen in guest book entry möglich?
+
+# Deployment
+- Add amplify for nginx monitoring
 https://amplify.nginx.com/signup/
 
-8. no magic numbers in server. use constants
+- do not use * for CORS header
 
-9. Need to change to 3.6 mongodb version
+# Development
+- Need to change to 3.6 mongodb version
 
-11. rewrite the whole docker shit
+- rewrite the whole docker shit
 
-12. date object should in vue should be a single object of multiple properties
+- Need new syntax highlighter
 
-14. Need new syntax highlighter
+- Look for different font type variants
 
-16. käse kuchen titel 
+- use grid layout in a single layout.css file
 
-17. rheinuferlauf muss noch geändert werden
+# Not concerning this project
 
-18. export entries to json
+- hacktoberfest aufs lebenslauf
 
-19. compress images with a webpack plugin
+- Ist es möglich über konsole auf eine website zu zugreifen (wget?)
 
-20. Look for different font type variants
-
-21. how to get resamvi.de/apfelkuchen => apfelkuchen entry?
-
-22. do not use * for CORS header
-
-23. hacktoberfest aufs lebenslauf
-
-24. über konsole auf eine website zugreifen (wget?)
-
-25. services sollen nicht abstürzen wenn man anderweitig auf sie zugreift 
-
-26. serveGuestbook braucht keine globale variable
-
-27. script einfügen in guest book entry
-
-28. use grid layout in a single layout.css file
-
-29. Bundle serveXXX files together to one package with a single main and multiple handler names on one port
-and use different colors to log
+- Use C3 (http://c3js.org/) for pomodoro project

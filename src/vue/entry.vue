@@ -10,7 +10,7 @@
 <template>
   <section>
     <span class="entry-date">{{ entry.Date }}</span>
-    <h1 class="entry-title">{{ entry.Title }}</h1>
+    <h1 class="entry-title" v-html="entry.Title"></h1>
     <div class="entry-content" v-html="entry.Text"></div>
     <div class="footer">
         <a href="gaestebuch.html" id="button">
