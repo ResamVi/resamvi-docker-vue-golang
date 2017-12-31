@@ -43,8 +43,8 @@ module.exports = {
             },
 
             /**
-             * Images should be stored inside the img folder
-             * TODO: compress images
+             * Images should be compressed and afterwards 
+             * stored inside the img folder
              */
             {
                 test: /\.(gif|png|jpe?g|ico|webm)/,
@@ -53,7 +53,13 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'img/'
-                    }
+                    },
+                },
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        bypassOnDebug: true,
+                    },
                 }]
             },
 
