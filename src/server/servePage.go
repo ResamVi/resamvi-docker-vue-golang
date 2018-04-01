@@ -2,7 +2,7 @@ package main
 
 import (
 	"bytes"
-	"fatih/color"
+	"github.com/fatih/color"
 	"fmt"
 	"gopkg.in/mgo.v2/bson"
 	"net/http"
@@ -45,7 +45,7 @@ func servePage(write http.ResponseWriter, reader *http.Request) {
 	/*
 	 * Convert the URL to int
 	 *
-	 * When redirected the name of entry is converted to its ID
+	 * When redirected the name of entry is converted to its ID (see: "number" in entries.json)
 	 * which is used here to serve the specific entry
 	 */ 
 	entryNumber, err := strconv.Atoi(string(reader.URL.Path[len(reader.URL.Path)-1]))

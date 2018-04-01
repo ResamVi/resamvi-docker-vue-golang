@@ -2,7 +2,7 @@ package main
 
 import(
 	"gopkg.in/mgo.v2"
-	"fatih/color"
+	"github.com/fatih/color"
 	"fmt"
 	"net/http"
 	"strings"

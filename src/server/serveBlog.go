@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"fatih/color"
+	"github.com/fatih/color"
 	"gopkg.in/mgo.v2/bson"
 	"io/ioutil"
 	"strconv"

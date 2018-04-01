@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"bytes"
-	"fatih/color"
+	"github.com/fatih/color"
 	"html/template"
 	"net/http"
 	"strings"

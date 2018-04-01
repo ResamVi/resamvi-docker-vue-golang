@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fatih/color"
+	"github.com/fatih/color"
 	"net/http"
 	"gopkg.in/mgo.v2"
 )
