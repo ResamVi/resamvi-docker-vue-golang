@@ -1,6 +1,6 @@
 FROM golang
 
-COPY src/server/*.go /go/src/server/
+COPY *.go /go/src/server/
 
 WORKDIR /go/src/server
 
