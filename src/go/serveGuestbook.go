@@ -46,8 +46,9 @@ func serveGuestbook(write http.ResponseWriter, reader *http.Request) {
 		color.Blue("Could not get all guestbook entries: " + err.Error())
 	}
 
+	// TODO: Remove gaestebuch and style.css (because of docker build context this is not possible)
 	// gaestebuch.html is a go template (TODO: Change path when deploying)
-	t := template.Must(template.ParseFiles("../../build/gaestebuch.html"))
+	t := template.Must(template.ParseFiles("gaestebuch.html"))
 
 	// With given template and the associated data filled into it, save it to this buffer
 	buffer := new(bytes.Buffer)

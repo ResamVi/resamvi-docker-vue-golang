@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./src/db/mongod.conf:/etc/mongod.conf
+      - ./src/db/entries.json:/entries.json
+    ports: 
+      - "27017:27017"
+    command: mongod -f /etc/mongod.conf
+  
+  db-seed:
+    build: ./src/db/.
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx
+    depends_on:
+      - go
+      - db-seed
+    ports: 
+      - "9001:9001"
+    volumes:
+      - ./src/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./src/nginx/entrylocation.conf:/etc/nginx/entrylocation.conf
+      - ./build/:/usr/share/nginx/html
+  
+  go:
+    build: ./src/go/.
+    depends_on:
+      - db

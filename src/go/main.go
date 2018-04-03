@@ -47,7 +47,7 @@ func main() {
 	defer session.Close()
 
 	// Setup handlers
-	http.HandleFunc("/", serveBlog) //TODO: use /blog
+	http.HandleFunc("/blog", serveBlog)
 	http.HandleFunc("/gaestebuch", serveGuestbook)
 	http.HandleFunc("/send", sendEntry)
 	http.HandleFunc("/entry/", servePage)

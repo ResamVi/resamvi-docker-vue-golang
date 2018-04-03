@@ -11,7 +11,7 @@ import(
 // DatabaseAddress is the location
 // to access the MongoDB database containing
 // blog entries and guestbook entries
-const databaseAddress = "localhost:27017"
+const databaseAddress = "db:27017"
 
 /*
  * Connect to the MongoDB database

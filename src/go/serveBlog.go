@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"encoding/json"
 	"github.com/fatih/color"
 	"gopkg.in/mgo.v2/bson"
@@ -31,6 +32,8 @@ type blogEntry struct {
  * entry has to be dynamically loaded next.
  */
 func serveBlog(write http.ResponseWriter, reader *http.Request) {
+
+	fmt.Println("Serving page")
 
 	// Log details about the client to console
 	formatRequest(reader)

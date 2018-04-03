@@ -60,7 +60,7 @@ func servePage(write http.ResponseWriter, reader *http.Request) {
 	}
 
 	// The entry.html file is the given template where entry data inserted
-	t := template.Must(template.ParseFiles("../../build/entry.html"))
+	t := template.Must(template.ParseFiles("entry.html"))
 
 	// Data inserted into the template is saved here
 	buffer := new(bytes.Buffer)

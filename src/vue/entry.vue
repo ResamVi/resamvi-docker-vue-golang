@@ -13,7 +13,7 @@
     <h1 class="entry-title" v-html="entry.Title"></h1>
     <div class="entry-content" v-html="entry.Text"></div>
     <div class="footer">
-        <a href="gaestebuch.html" id="button">
+        <a href="gaestebuch" id="button">
           <div title="Zum Gästebuch">
             <img src="img/book.jpg" alt="door">
           </div>
@@ -54,7 +54,7 @@ export default
          * fetching entries out of the database.
          */
         var http = new XMLHttpRequest();
-        var url = "http://localhost:8080/";
+        var url = "http://localhost:9001/blog";
         var params = this.$parent.count;
 
         http.open("POST", url);
