@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://resamvi.de/img/logo.png" width="300"></a>
+  <img src="https://i.imgur.com/EY4EVJF.png" width="300"></a>
   <br>
   ResamVitalized
 </h1>
