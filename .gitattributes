@@ -1,0 +1,3 @@
+node_modules/* linguist-vendored
+webpack.config.js linguist-vendored
+src/index.js linguist-vendored
